@@ -1,0 +1,62 @@
+<div class="container-fluid pt-4 px-4">
+  <div class="bg-light text-center rounded p-4">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <h6 class="mb-0">Products List</h6>
+      <a href="">Show All</a>
+    </div>
+    <div class="table-responsive"  >
+      <table class="table text-start align-middle table-bordered table-hover mb-0" style="text-align: center;">
+        <thead>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            Image
+          </th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            Title
+          </th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            price
+          </th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            BidMax
+          </th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            Time Start
+          </th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900" style="text-align: center;">Time End </th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900" style="text-align: center;">Option</th>
+
+        </thead>
+        <tbody >
+        @for (product of products; track product._id) {
+          <tr>
+            <td><img [routerLink]="['/products', product._id]" [src]="product.image" width="100px" /></td>
+            <!-- <td>{{ product.category }}</td> -->
+            <td>{{ product.title }}</td>
+            <td style="font-weight: bold;" >{{ product.price }}$</td>
+            <td  style="font-weight: bold;"  >{{ product.bidPriceMax }}$</td>
+            <td>{{ product.startAt }}</td>
+            <td>{{ product.endAt }}</td>
+            
+            <td style="text-align: center;" >
+              <a class="btn btn-warning" 
+                >Info</a
+              > <br>
+              <a
+                class="btn btn-info"
+                [routerLink]="['/admin/products/edit', product._id]"
+                >Edit</a
+              >
+              <button
+                class="btn btn-danger"
+                (click)="handleDeleteProduct(product._id)"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

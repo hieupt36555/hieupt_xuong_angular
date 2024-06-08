@@ -1,0 +1,20 @@
+countdown{
+    background-color: rgb(255, 255, 255);
+    /* width: 3000px; */
+    color: red;
+}
+.inpBid{
+    border-bottom: 1px solid black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+
+}
+.btn_primary{
+    margin-left: 20px;
+    border-radius: 10px;
+}
+.btn_primary:hover{
+    background-color: red;
+    color: white;
+}
