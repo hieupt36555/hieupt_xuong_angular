@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { UserLoginRes } from '../../../types/User';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -33,7 +34,16 @@ export class LoginComponent {
         localStorage.setItem('token', (data as UserLoginRes).token);
         localStorage.setItem('userId', (data as UserLoginRes).user._id);
 
-        setTimeout(() => this.router.navigate(['/']), 1000);
+        
+          Swal.fire({
+            title: "Success!",
+            text: "Dang Ky Thanh Cong.",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 1100
+          });
+          this.router.navigate(['/'])
+       
       },
       error: (error) => {
         console.error(error.message);

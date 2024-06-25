@@ -23,6 +23,25 @@ class BidsController {
       next(error);
     }
   }
+
+  async updateBid(req, res, next) {
+    try {
+      
+      const updateBid = await Bid.findByIdAndUpdate(
+        req.params.id, 
+        req.body,
+        { new: true }
+      );
+      if (!updateBid) throw new ApiError(404, "Bid Not Found");
+
+      res.status(StatusCodes.OK).json({
+        message: "Update Bid Successfull",
+        data: updateBid,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 export default BidsController;

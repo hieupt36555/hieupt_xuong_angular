@@ -1,0 +1,58 @@
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-light text-center rounded p-4">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <h6 class="mb-0">Bids List</h6>
+        <a href="">Show All</a>
+      </div>
+      @if(product){
+        <div class="table-responsive"  >
+             <div>Product: {{product.title}}</div>
+            <table class="table text-start align-middle table-bordered table-hover mb-0" style="text-align: center;">
+              <thead>
+                <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                  Email
+                </th>
+                <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                  User Name
+                </th>
+                <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                    Price
+                  </th>
+                <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                  Date
+                </th>  
+                <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                    Option
+                  </th>  
+              </thead>
+              <tbody >
+              @for (bid of product.bids; track bid._id) {
+                <tr>
+                  <td>{{bid.user.email}}</td>
+                  <td >{{bid.user.username}}</td>
+                  <td >{{bid.price}}$</td>
+                  <td >{{bid.createdAt | date: 'dd/mm/yy hh:mm:ss'}}</td>
+                  
+                  <td style="text-align: center;" >
+
+                    @if(bid.price === product.bidPriceMax && !bid.isWinBid){
+                        <button
+                        class="btn btn-info"
+                        (click)="handleBidWin(bid._id)"
+                      >
+                        Winner
+                      </button>
+                    } @else if (bid.isWinBid) {
+                        <span class="badge badge-success">Winner!</span>
+                    }
+
+                  </td>
+                </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+      }
+
+    </div>
+  </div>

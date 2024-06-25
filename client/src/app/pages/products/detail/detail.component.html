@@ -63,7 +63,8 @@
         <div class="cart_overlay"></div>
     </div>
 
-    <div class="modal fade" id="quickview_popup" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal fade" id="quickview_popup" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -79,12 +80,14 @@
                                         <img src="assets/images/shop/product_img_12.png" alt>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-lg-6">
                                     <div class="product_details_content">
                                         <h2 class="item_title">Macbook Pro</h2>
                                         <p>
-                                            It is a long established fact that a reader will be distracted eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate
+                                            It is a long established fact that a reader will be distracted eget velit.
+                                            Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget
+                                            sagittis vulputate
                                         </p>
                                         <div class="item_review">
                                             <ul class="rating_star ul_li">
@@ -109,7 +112,8 @@
                                                         <div class="select_option clearfix">
                                                             <h4 class="input_title">Size *</h4>
                                                             <select>
-                                                                <option data-display="- Please select -">Choose A Option</option>
+                                                                <option data-display="- Please select -">Choose A Option
+                                                                </option>
                                                                 <option value="1">Some option</option>
                                                                 <option value="2">Another option</option>
                                                                 <option value="3" disabled>A disabled option</option>
@@ -121,7 +125,8 @@
                                                         <div class="select_option clearfix">
                                                             <h4 class="input_title">Color *</h4>
                                                             <select>
-                                                                <option data-display="- Please select -">Choose A Option</option>
+                                                                <option data-display="- Please select -">Choose A Option
+                                                                </option>
                                                                 <option value="1">Some option</option>
                                                                 <option value="2">Another option</option>
                                                                 <option value="3" disabled>A disabled option</option>
@@ -133,7 +138,7 @@
                                                 <span class="repuired_text">Repuired Fiields *</span>
                                             </form>
                                         </div>
-                                        
+
                                         <div class="quantity_wrap">
                                             <form action="#">
                                                 <div class="quantity_input">
@@ -150,13 +155,13 @@
                                                 Total: $620,99
                                             </div>
                                         </div>
-                                        
+
                                         <ul class="default_btns_group ul_li">
                                             <li><a class="addtocart_btn" href="#!">Add To Cart</a></li>
                                             <li><a href="#!"><i class="far fa-compress-alt"></i></a></li>
                                             <li><a href="#!"><i class="fas fa-heart"></i></a></li>
                                         </ul>
-                                        
+
                                         <ul class="default_share_links ul_li">
                                             <li>
                                                 <a class="facebook" href="#!">
@@ -203,7 +208,7 @@
 
     <section class="product_details section_space pb-0">
         <div class="container">
-            <div class="row"  >
+            <div class="row">
                 <div class="col col-lg-6">
                     <div class="product_details_image">
                         <div class="details_image_carousel">
@@ -226,7 +231,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6">
                     <div class="product_details_content">
                         <h2 class="item_title">{{product.title}}</h2>
@@ -243,22 +248,14 @@
                         </div>
 
                         <div class="item_price">
-                            <span style="color: red;" >${{product.price}}</span>
+                            <span style="color: red;">${{product.price}}</span>
                             <del>$720.00</del>
                         </div>
                         <hr>
 
 
-                        <countdown [config]="config" />
-                        <form [formGroup]="bidForm" (ngSubmit)="handleSubmit()">
-                          <input type="number" formControlName="price" class="inpBid" placeholder="Enter Your Price" />
-                          <button class="btn btn_primary addtocart_btn" type="submit">Ok</button>
-                        </form>
-                        <p>Bid Price Max : {{ product.bidPriceMax }}</p>
-                        <p>Bid History</p>
-                        @for (bid of product.bids; track bid) {
-                        <p>{{ bid.user.username }} - {{bid.price}}$ - {{ bid.createdAt | date : "dd/MM/yyyy" }} </p>
-                        } 
+
+                        
 
 
                         <div class="item_attribute">
@@ -345,36 +342,93 @@
                 </div>
             </div>
 
+
+
+
+
             <div class="details_information_tab">
                 <ul class="tabs_nav nav ul_li" role=tablist>
                     <li>
-                        <button class="active" data-bs-toggle="tab" data-bs-target="#description_tab" type="button" role="tab" aria-controls="description_tab" aria-selected="true">
-                        Description
+                        <button class="active" data-bs-toggle="tab" data-bs-target="#description_tab" type="button"
+                            role="tab" aria-controls="description_tab" aria-selected="true">
+                            Bid
                         </button>
                     </li>
                     <li>
-                        <button data-bs-toggle="tab" data-bs-target="#additional_information_tab" type="button" role="tab" aria-controls="additional_information_tab" aria-selected="false">
-                        Additional information
+                        <button data-bs-toggle="tab" data-bs-target="#additional_information_tab" type="button"
+                            role="tab" aria-controls="additional_information_tab" aria-selected="false">
+                            Additional information
                         </button>
                     </li>
                     <li>
-                        <button data-bs-toggle="tab" data-bs-target="#reviews_tab" type="button" role="tab" aria-controls="reviews_tab" aria-selected="false">
-                        Reviews(2)
+                        <button data-bs-toggle="tab" data-bs-target="#reviews_tab" type="button" role="tab"
+                            aria-controls="reviews_tab" aria-selected="false">
+                            Reviews(2)
                         </button>
                     </li>
                 </ul>
 
                 <div class="tab-content">
+                    
                     <div class="tab-pane fade show active" id="description_tab" role="tabpanel">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>
-                        <p class="mb-0">
-                        Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus, consequat et blandit et, luctus a nunc. Etiam gravida vehicula tellus, in imperdiet ligula euismod eget.
-                        </p>
+                        <h3 style="text-align: center; margin-top: 20px; margin-bottom: 20px;">Auctioned product In : <countdown [config]="config" /></h3>
+
+                        <div class="bid_form" style="display: flex; " >
+                            
+                            <form style="width: 50%;" [formGroup]="bidForm" (ngSubmit)="handleSubmit()">
+
+                                <h4>The current highest bid is: {{ product.bidPriceMax }}$ </h4>
+                                <div class="mb-3">
+                                  <input type="number" class="form-control inpBid" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="price" placeholder="Your Price" >
+                                  @if(bidForm.controls['price'].touched &&
+                                  bidForm.controls['price'].errors?.['min']) {
+                                  <span class="text-danger text-small"><small>Price Is > 0</small></span>
+                                  }                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                              </form>
+
+                            <div class="col-sm-12 col-xl-6" style="width: 50%; margin-left: 20px;" >
+                                <div class=" rounded h-100 p-4" >
+                                    <h6 class="mb-4">Bid History</h6>
+                                    
+                                    <table class="table table-hover"  >
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">User Name</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Top</th>
+                                            </tr>
+                                        </thead>
+            
+                                        <tbody>
+                                            @for (bid of product.bids; track bid) {
+                                            <tr>
+                                                <td>{{ bid.user.username }}</td>
+                                                <td>{{bid.price}}$</td>
+                                                <td>{{ bid.createdAt | date : "dd/MM/yyyy" }} </td>
+
+
+                                                @if(bid.price == bidPriceMax){
+                                                    <td >Top</td>
+                                                }@else {
+                                                    <td></td>
+                                                }
+                                            </tr>
+                                        }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="tab-pane fade" id="additional_information_tab" role="tabpanel">
                         <p>
-                        Return into stiff sections the bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked what's happened to me he thought It wasn't a dream. His room, a proper human room although a little too small
+                            Return into stiff sections the bedding was hardly able to cover it and seemed ready to slide
+                            off any moment. His many legs, pitifully thin compared with the size of the rest of him,
+                            waved about helplessly as he looked what's happened to me he thought It wasn't a dream. His
+                            room, a proper human room although a little too small
                         </p>
 
                         <div class="additional_info_list">
@@ -414,7 +468,7 @@
                                             <li><i class="fas fa-star-half-alt"></i></li>
                                         </ul>
                                         <p class="mb-0">
-                                        Average Star Rating: <span>4.3 out of 5</span> (2 vote)
+                                            Average Star Rating: <span>4.3 out of 5</span> (2 vote)
                                         </p>
                                     </div>
                                 </div>
@@ -423,7 +477,9 @@
                                     <div class="product_ratings_progressbar">
                                         <ul class="five_star ul_li">
                                             <li><span>5 Star</span></li>
-                                            <li><div class="progress_bar"></div></li>
+                                            <li>
+                                                <div class="progress_bar"></div>
+                                            </li>
                                             <li>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
@@ -434,7 +490,9 @@
                                         </ul>
                                         <ul class="four_star ul_li">
                                             <li><span>4 Star</span></li>
-                                            <li><div class="progress_bar"></div></li>
+                                            <li>
+                                                <div class="progress_bar"></div>
+                                            </li>
                                             <li>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
@@ -445,7 +503,9 @@
                                         </ul>
                                         <ul class="three_star ul_li">
                                             <li><span>3 Star</span></li>
-                                            <li><div class="progress_bar"></div></li>
+                                            <li>
+                                                <div class="progress_bar"></div>
+                                            </li>
                                             <li>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
@@ -456,7 +516,9 @@
                                         </ul>
                                         <ul class="two_star ul_li">
                                             <li><span>2 Star</span></li>
-                                            <li><div class="progress_bar"></div></li>
+                                            <li>
+                                                <div class="progress_bar"></div>
+                                            </li>
                                             <li>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
@@ -467,7 +529,9 @@
                                         </ul>
                                         <ul class="one_star ul_li">
                                             <li><span>1 Star</span></li>
-                                            <li><div class="progress_bar"></div></li>
+                                            <li>
+                                                <div class="progress_bar"></div>
+                                            </li>
                                             <li>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fal fa-star"></i>
@@ -520,7 +584,7 @@
                                         <span class="comment_date">JUNE 2, 2021</span>
                                     </div>
                                     <p class="mb-0">
-                                    Great product quality, Great Design and Great Service.
+                                        Great product quality, Great Design and Great Service.
                                     </p>
                                 </div>
                             </div>
@@ -529,7 +593,7 @@
                         <div class="customer_review_form">
                             <h4 class="reviews_tab_title">Add a review</h4>
                             <p>
-                            Your email address will not be published. Required fields are marked *
+                                Your email address will not be published. Required fields are marked *
                             </p>
                             <form action="#">
                                 <div class="form_item">
@@ -540,7 +604,8 @@
                                 </div>
                                 <div class="checkbox_item">
                                     <input id="save_checkbox" type="checkbox">
-                                    <label for="save_checkbox">Save my name, email, and website in this browser for the next time I comment.</label>
+                                    <label for="save_checkbox">Save my name, email, and website in this browser for the
+                                        next time I comment.</label>
                                 </div>
                                 <div class="your_ratings">
                                     <h5>Your Ratings:</h5>
@@ -578,13 +643,40 @@
                                     <div class="actions">
                                         <ul>
                                             <li>
-                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#2329D6"> <title>Favourite</title> <path d="M12,21 L10.55,19.7051771 C5.4,15.1242507 2,12.1029973 2,8.39509537 C2,5.37384196 4.42,3 7.5,3 C9.24,3 10.91,3.79455041 12,5.05013624 C13.09,3.79455041 14.76,3 16.5,3 C19.58,3 22,5.37384196 22,8.39509537 C22,12.1029973 18.6,15.1242507 13.45,19.7149864 L12,21 Z"/> </svg></a>
+                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg"
+                                                        width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6"
+                                                        stroke-width="1" stroke-linecap="square" stroke-linejoin="miter"
+                                                        fill="none" color="#2329D6">
+                                                        <title>Favourite</title>
+                                                        <path
+                                                            d="M12,21 L10.55,19.7051771 C5.4,15.1242507 2,12.1029973 2,8.39509537 C2,5.37384196 4.42,3 7.5,3 C9.24,3 10.91,3.79455041 12,5.05013624 C13.09,3.79455041 14.76,3 16.5,3 C19.58,3 22,5.37384196 22,8.39509537 C22,12.1029973 18.6,15.1242507 13.45,19.7149864 L12,21 Z" />
+                                                    </svg></a>
                                             </li>
                                             <li>
-                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#2329D6"> <title>Shuffle</title> <path d="M21 16.0399H17.7707C15.8164 16.0399 13.9845 14.9697 12.8611 13.1716L10.7973 9.86831C9.67384 8.07022 7.84196 7 5.88762 7L3 7"/> <path d="M21 7H17.7707C15.8164 7 13.9845 8.18388 12.8611 10.1729L10.7973 13.8271C9.67384 15.8161 7.84196 17 5.88762 17L3 17"/> <path d="M19 4L22 7L19 10"/> <path d="M19 13L22 16L19 19"/> </svg></a>
+                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg"
+                                                        width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6"
+                                                        stroke-width="1" stroke-linecap="square" stroke-linejoin="miter"
+                                                        fill="none" color="#2329D6">
+                                                        <title>Shuffle</title>
+                                                        <path
+                                                            d="M21 16.0399H17.7707C15.8164 16.0399 13.9845 14.9697 12.8611 13.1716L10.7973 9.86831C9.67384 8.07022 7.84196 7 5.88762 7L3 7" />
+                                                        <path
+                                                            d="M21 7H17.7707C15.8164 7 13.9845 8.18388 12.8611 10.1729L10.7973 13.8271C9.67384 15.8161 7.84196 17 5.88762 17L3 17" />
+                                                        <path d="M19 4L22 7L19 10" />
+                                                        <path d="M19 13L22 16L19 19" />
+                                                    </svg></a>
                                             </li>
                                             <li>
-                                                <a class="quickview_btn" data-bs-toggle="modal" href="#quickview_popup" role="button" tabindex="0"><svg width="48px" height="48px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#2329D6" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#2329D6"> <title>Visible (eye)</title> <path d="M22 12C22 12 19 18 12 18C5 18 2 12 2 12C2 12 5 6 12 6C19 6 22 12 22 12Z"/> <circle cx="12" cy="12" r="3"/> </svg></a>
+                                                <a class="quickview_btn" data-bs-toggle="modal" href="#quickview_popup"
+                                                    role="button" tabindex="0"><svg width="48px" height="48px"
+                                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                        stroke="#2329D6" stroke-width="1" stroke-linecap="square"
+                                                        stroke-linejoin="miter" fill="none" color="#2329D6">
+                                                        <title>Visible (eye)</title>
+                                                        <path
+                                                            d="M22 12C22 12 19 18 12 18C5 18 2 12 2 12C2 12 5 6 12 6C19 6 22 12 22 12Z" />
+                                                        <circle cx="12" cy="12" r="3" />
+                                                    </svg></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -620,13 +712,40 @@
                                     <div class="actions">
                                         <ul>
                                             <li>
-                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#2329D6"> <title>Favourite</title> <path d="M12,21 L10.55,19.7051771 C5.4,15.1242507 2,12.1029973 2,8.39509537 C2,5.37384196 4.42,3 7.5,3 C9.24,3 10.91,3.79455041 12,5.05013624 C13.09,3.79455041 14.76,3 16.5,3 C19.58,3 22,5.37384196 22,8.39509537 C22,12.1029973 18.6,15.1242507 13.45,19.7149864 L12,21 Z"/> </svg></a>
+                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg"
+                                                        width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6"
+                                                        stroke-width="1" stroke-linecap="square" stroke-linejoin="miter"
+                                                        fill="none" color="#2329D6">
+                                                        <title>Favourite</title>
+                                                        <path
+                                                            d="M12,21 L10.55,19.7051771 C5.4,15.1242507 2,12.1029973 2,8.39509537 C2,5.37384196 4.42,3 7.5,3 C9.24,3 10.91,3.79455041 12,5.05013624 C13.09,3.79455041 14.76,3 16.5,3 C19.58,3 22,5.37384196 22,8.39509537 C22,12.1029973 18.6,15.1242507 13.45,19.7149864 L12,21 Z" />
+                                                    </svg></a>
                                             </li>
                                             <li>
-                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#2329D6"> <title>Shuffle</title> <path d="M21 16.0399H17.7707C15.8164 16.0399 13.9845 14.9697 12.8611 13.1716L10.7973 9.86831C9.67384 8.07022 7.84196 7 5.88762 7L3 7"/> <path d="M21 7H17.7707C15.8164 7 13.9845 8.18388 12.8611 10.1729L10.7973 13.8271C9.67384 15.8161 7.84196 17 5.88762 17L3 17"/> <path d="M19 4L22 7L19 10"/> <path d="M19 13L22 16L19 19"/> </svg></a>
+                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg"
+                                                        width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6"
+                                                        stroke-width="1" stroke-linecap="square" stroke-linejoin="miter"
+                                                        fill="none" color="#2329D6">
+                                                        <title>Shuffle</title>
+                                                        <path
+                                                            d="M21 16.0399H17.7707C15.8164 16.0399 13.9845 14.9697 12.8611 13.1716L10.7973 9.86831C9.67384 8.07022 7.84196 7 5.88762 7L3 7" />
+                                                        <path
+                                                            d="M21 7H17.7707C15.8164 7 13.9845 8.18388 12.8611 10.1729L10.7973 13.8271C9.67384 15.8161 7.84196 17 5.88762 17L3 17" />
+                                                        <path d="M19 4L22 7L19 10" />
+                                                        <path d="M19 13L22 16L19 19" />
+                                                    </svg></a>
                                             </li>
                                             <li>
-                                                <a class="quickview_btn" data-bs-toggle="modal" href="#quickview_popup" role="button" tabindex="0"><svg width="48px" height="48px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#2329D6" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#2329D6"> <title>Visible (eye)</title> <path d="M22 12C22 12 19 18 12 18C5 18 2 12 2 12C2 12 5 6 12 6C19 6 22 12 22 12Z"/> <circle cx="12" cy="12" r="3"/> </svg></a>
+                                                <a class="quickview_btn" data-bs-toggle="modal" href="#quickview_popup"
+                                                    role="button" tabindex="0"><svg width="48px" height="48px"
+                                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                        stroke="#2329D6" stroke-width="1" stroke-linecap="square"
+                                                        stroke-linejoin="miter" fill="none" color="#2329D6">
+                                                        <title>Visible (eye)</title>
+                                                        <path
+                                                            d="M22 12C22 12 19 18 12 18C5 18 2 12 2 12C2 12 5 6 12 6C19 6 22 12 22 12Z" />
+                                                        <circle cx="12" cy="12" r="3" />
+                                                    </svg></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -662,13 +781,40 @@
                                     <div class="actions">
                                         <ul>
                                             <li>
-                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#2329D6"> <title>Favourite</title> <path d="M12,21 L10.55,19.7051771 C5.4,15.1242507 2,12.1029973 2,8.39509537 C2,5.37384196 4.42,3 7.5,3 C9.24,3 10.91,3.79455041 12,5.05013624 C13.09,3.79455041 14.76,3 16.5,3 C19.58,3 22,5.37384196 22,8.39509537 C22,12.1029973 18.6,15.1242507 13.45,19.7149864 L12,21 Z"/> </svg></a>
+                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg"
+                                                        width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6"
+                                                        stroke-width="1" stroke-linecap="square" stroke-linejoin="miter"
+                                                        fill="none" color="#2329D6">
+                                                        <title>Favourite</title>
+                                                        <path
+                                                            d="M12,21 L10.55,19.7051771 C5.4,15.1242507 2,12.1029973 2,8.39509537 C2,5.37384196 4.42,3 7.5,3 C9.24,3 10.91,3.79455041 12,5.05013624 C13.09,3.79455041 14.76,3 16.5,3 C19.58,3 22,5.37384196 22,8.39509537 C22,12.1029973 18.6,15.1242507 13.45,19.7149864 L12,21 Z" />
+                                                    </svg></a>
                                             </li>
                                             <li>
-                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#2329D6"> <title>Shuffle</title> <path d="M21 16.0399H17.7707C15.8164 16.0399 13.9845 14.9697 12.8611 13.1716L10.7973 9.86831C9.67384 8.07022 7.84196 7 5.88762 7L3 7"/> <path d="M21 7H17.7707C15.8164 7 13.9845 8.18388 12.8611 10.1729L10.7973 13.8271C9.67384 15.8161 7.84196 17 5.88762 17L3 17"/> <path d="M19 4L22 7L19 10"/> <path d="M19 13L22 16L19 19"/> </svg></a>
+                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg"
+                                                        width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6"
+                                                        stroke-width="1" stroke-linecap="square" stroke-linejoin="miter"
+                                                        fill="none" color="#2329D6">
+                                                        <title>Shuffle</title>
+                                                        <path
+                                                            d="M21 16.0399H17.7707C15.8164 16.0399 13.9845 14.9697 12.8611 13.1716L10.7973 9.86831C9.67384 8.07022 7.84196 7 5.88762 7L3 7" />
+                                                        <path
+                                                            d="M21 7H17.7707C15.8164 7 13.9845 8.18388 12.8611 10.1729L10.7973 13.8271C9.67384 15.8161 7.84196 17 5.88762 17L3 17" />
+                                                        <path d="M19 4L22 7L19 10" />
+                                                        <path d="M19 13L22 16L19 19" />
+                                                    </svg></a>
                                             </li>
                                             <li>
-                                                <a class="quickview_btn" data-bs-toggle="modal" href="#quickview_popup" role="button" tabindex="0"><svg width="48px" height="48px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"  stroke="#2329D6" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#2329D6"> <title>Visible (eye)</title> <path d="M22 12C22 12 19 18 12 18C5 18 2 12 2 12C2 12 5 6 12 6C19 6 22 12 22 12Z"/> <circle cx="12" cy="12" r="3"/> </svg></a>
+                                                <a class="quickview_btn" data-bs-toggle="modal" href="#quickview_popup"
+                                                    role="button" tabindex="0"><svg width="48px" height="48px"
+                                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                        stroke="#2329D6" stroke-width="1" stroke-linecap="square"
+                                                        stroke-linejoin="miter" fill="none" color="#2329D6">
+                                                        <title>Visible (eye)</title>
+                                                        <path
+                                                            d="M22 12C22 12 19 18 12 18C5 18 2 12 2 12C2 12 5 6 12 6C19 6 22 12 22 12Z" />
+                                                        <circle cx="12" cy="12" r="3" />
+                                                    </svg></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -711,13 +857,40 @@
                                     <div class="actions">
                                         <ul>
                                             <li>
-                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#2329D6"> <title>Favourite</title> <path d="M12,21 L10.55,19.7051771 C5.4,15.1242507 2,12.1029973 2,8.39509537 C2,5.37384196 4.42,3 7.5,3 C9.24,3 10.91,3.79455041 12,5.05013624 C13.09,3.79455041 14.76,3 16.5,3 C19.58,3 22,5.37384196 22,8.39509537 C22,12.1029973 18.6,15.1242507 13.45,19.7149864 L12,21 Z"/> </svg></a>
+                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg"
+                                                        width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6"
+                                                        stroke-width="1" stroke-linecap="square" stroke-linejoin="miter"
+                                                        fill="none" color="#2329D6">
+                                                        <title>Favourite</title>
+                                                        <path
+                                                            d="M12,21 L10.55,19.7051771 C5.4,15.1242507 2,12.1029973 2,8.39509537 C2,5.37384196 4.42,3 7.5,3 C9.24,3 10.91,3.79455041 12,5.05013624 C13.09,3.79455041 14.76,3 16.5,3 C19.58,3 22,5.37384196 22,8.39509537 C22,12.1029973 18.6,15.1242507 13.45,19.7149864 L12,21 Z" />
+                                                    </svg></a>
                                             </li>
                                             <li>
-                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#2329D6"> <title>Shuffle</title> <path d="M21 16.0399H17.7707C15.8164 16.0399 13.9845 14.9697 12.8611 13.1716L10.7973 9.86831C9.67384 8.07022 7.84196 7 5.88762 7L3 7"/> <path d="M21 7H17.7707C15.8164 7 13.9845 8.18388 12.8611 10.1729L10.7973 13.8271C9.67384 15.8161 7.84196 17 5.88762 17L3 17"/> <path d="M19 4L22 7L19 10"/> <path d="M19 13L22 16L19 19"/> </svg></a>
+                                                <a href="#"><svg role="img" xmlns="http://www.w3.org/2000/svg"
+                                                        width="48px" height="48px" viewBox="0 0 24 24" stroke="#2329D6"
+                                                        stroke-width="1" stroke-linecap="square" stroke-linejoin="miter"
+                                                        fill="none" color="#2329D6">
+                                                        <title>Shuffle</title>
+                                                        <path
+                                                            d="M21 16.0399H17.7707C15.8164 16.0399 13.9845 14.9697 12.8611 13.1716L10.7973 9.86831C9.67384 8.07022 7.84196 7 5.88762 7L3 7" />
+                                                        <path
+                                                            d="M21 7H17.7707C15.8164 7 13.9845 8.18388 12.8611 10.1729L10.7973 13.8271C9.67384 15.8161 7.84196 17 5.88762 17L3 17" />
+                                                        <path d="M19 4L22 7L19 10" />
+                                                        <path d="M19 13L22 16L19 19" />
+                                                    </svg></a>
                                             </li>
                                             <li>
-                                                <a class="quickview_btn" data-bs-toggle="modal" href="#quickview_popup" role="button" tabindex="0"><svg width="48px" height="48px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#2329D6" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#2329D6"> <title>Visible (eye)</title> <path d="M22 12C22 12 19 18 12 18C5 18 2 12 2 12C2 12 5 6 12 6C19 6 22 12 22 12Z"/> <circle cx="12" cy="12" r="3"/> </svg></a>
+                                                <a class="quickview_btn" data-bs-toggle="modal" href="#quickview_popup"
+                                                    role="button" tabindex="0"><svg width="48px" height="48px"
+                                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                        stroke="#2329D6" stroke-width="1" stroke-linecap="square"
+                                                        stroke-linejoin="miter" fill="none" color="#2329D6">
+                                                        <title>Visible (eye)</title>
+                                                        <path
+                                                            d="M22 12C22 12 19 18 12 18C5 18 2 12 2 12C2 12 5 6 12 6C19 6 22 12 22 12Z" />
+                                                        <circle cx="12" cy="12" r="3" />
+                                                    </svg></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -747,7 +920,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>        
+                    </div>
                 </div>
             </div>
         </div>
